@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rental Listings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Recommended Rentals Near Your College</h1>
+
+<div class="filters">
+    <select id="budgetFilter">
+        <option value="all">Budget</option>
+        <option value="low">Below ₹5000</option>
+        <option value="mid">₹5000 – ₹7000</option>
+        <option value="high">Above ₹7000</option>
+    </select>
+
+    <select id="distanceFilter">
+        <option value="all">Distance</option>
+        <option value="near">Within 1 km</option>
+        <option value="medium">Within 3 km</option>
+        <option value="far">Above 3 km</option>
+    </select>
+
+    <button onclick="applyFilters()">Apply Filters</button>
+</div>
+
+<div class="cards">
+
+    <div class="card recommended" data-rent="6500" data-distance="1.2">
+        <h3>Sunshine PG</h3>
+        <p>Rent: ₹6500</p>
+        <p>Distance: 1.2 km</p>
+        <p>Rating: ⭐⭐⭐⭐☆</p>
+        <p>Trust Score: 82%</p>
+        <a href="details.html"><button>View Details</button></a>
+    </div>
+
+    <div class="card recommended" data-rent="5800" data-distance="0.8">
+        <h3>GreenView Hostel</h3>
+        <p>Rent: ₹5800</p>
+        <p>Distance: 0.8 km</p>
+        <p>Rating: ⭐⭐⭐⭐⭐</p>
+        <p>Trust Score: 90%</p>
+        <a href="details.html"><button>View Details</button></a>
+    </div>
+
+    <div class="card recommended" data-rent="4800" data-distance="3.5">
+        <h3>CityNest Rooms</h3>
+        <p>Rent: ₹4800</p>
+        <p>Distance: 3.5 km</p>
+        <p>Rating: ⭐⭐⭐⭐☆</p>
+        <p>Trust Score: 70%</p>
+        <a href="details.html"><button>View Details</button></a>
+    </div>
+
+    <div class="card recommended" data-rent="7200" data-distance="2.0">
+        <h3>BlueSky PG</h3>
+        <p>Rent: ₹7200</p>
+        <p>Distance: 2.0 km</p>
+        <p>Rating: ⭐⭐⭐⭐⭐</p>
+        <p>Trust Score: 88%</p>
+        <a href="details.html"><button>View Details</button></a>
+    </div>
+
+    <div class="card recommended" data-rent="5500" data-distance="1.5">
+        <h3>Student Hub Hostel</h3>
+        <p>Rent: ₹5500</p>
+        <p>Distance: 1.5 km</p>
+        <p>Rating: ⭐⭐⭐⭐☆</p>
+        <p>Trust Score: 80%</p>
+        <a href="details.html"><button>View Details</button></a>
+    </div>
+
+    <div class="card recommended" data-rent="8000" data-distance="0.6">
+        <h3>Metro Stay PG</h3>
+        <p>Rent: ₹8000</p>
+        <p>Distance: 0.6 km</p>
+        <p>Rating: ⭐⭐⭐⭐⭐</p>
+        <p>Trust Score: 92%</p>
+        <a href="details.html"><button>View Details</button></a>
+    </div>
+
+</div>
+
+<p><i>AI Recommendation is based on budget, distance, ratings and trust score.</i></p>
+<script>
+function applyFilters() {
+    const budget = document.getElementById("budgetFilter").value;
+    const distance = document.getElementById("distanceFilter").value;
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        const rent = parseInt(card.getAttribute("data-rent"));
+        const dist = parseFloat(card.getAttribute("data-distance"));
+
+        let show = true;
+
+        // Budget filter
+        if (budget === "low" && rent >= 5000) show = false;
+        if (budget === "mid" && (rent < 5000 || rent > 7000)) show = false;
+        if (budget === "high" && rent <= 7000) show = false;
+
+        // Distance filter
+        if (distance === "near" && dist > 1) show = false;
+        if (distance === "medium" && dist > 3) show = false;
+        if (distance === "far" && dist <= 3) show = false;
+
+        card.style.display = show ? "block" : "none";
+    });
+}
+</script>
+</body>
+</html>

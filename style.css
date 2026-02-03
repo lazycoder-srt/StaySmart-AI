@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #1e40af;
+}
+
+.login-container {
+    width: 320px;
+    margin: 120px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e40af;
+}
+
+.filters {
+    margin: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.recommended {
+    border: 2px solid green;
+}
+
+a {
+    text-decoration: none;
+}
+button {
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.card:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+.login-page {
+    height: 100vh;
+    background: linear-gradient(to right, #2563eb, #1e40af);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background: white;
+    padding: 30px;
+    width: 340px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.login-container h2 {
+    margin-bottom: 10px;
+}
+
+.login-container p {
+    font-size: 14px;
+    color: #555;
+}
+
+.signup-text {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #2563eb;
+    cursor: pointer;
+}
+/* ===== AUTH PAGE ===== */
+
+.auth-page {
+    height: 100vh;
+    background: 
+        linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+        url("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    background: white;
+    width: 360px;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.auth-card h2 {
+    color: #1e40af;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.auth-card button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.switch-text {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.switch-text span {
+    color: #2563eb;
+    font-weight: bold;
+    cursor: pointer;
+}
+.auth-card select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
