@@ -3,31 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>StaySmart AI – Hostels</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
-    }
-    .hostel {
-      background: white;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .hostel h3 {
-      margin: 0;
-      color: #333;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h1>Nearby Hostels</h1>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="preferences.html">Preferences</a>
+    <a href="listings.html">Listings</a>
+    <a href="safety.html">Safety</a>
+  </nav>
 
-  <div id="hostel-list">
-    Loading hostels...
+  <div class="page-center">
+    <div class="main-card">
+      <h2>Nearby Hostels</h2>
+
+      <!-- THIS is where JS injects hostels -->
+      <div id="hostel-list"></div>
+    </div>
   </div>
 
   <script src="script.js"></script>

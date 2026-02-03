@@ -6,17 +6,25 @@ fetch(API_URL)
     const container = document.getElementById("hostel-list");
     container.innerHTML = "";
 
-    data.forEach(hostel => {
+    (data || []).forEach(hostel => {
       const div = document.createElement("div");
-      div.className = "hostel";
+
+      div.className = "hostel-card";
 
       div.innerHTML = `
-        <h3>${hostel.name}</h3>
-        <p><strong>Rent:</strong> ₹${hostel.rent}</p>
-        <p><strong>Distance:</strong> ${hostel.distance} km</p>
-        <p><strong>City:</strong> ${hostel.city}</p>
-        <p><strong>College:</strong> ${hostel.college}</p>
-        <p><strong>Trust Score:</strong> ${hostel.trust_score}</p>
+       <img src="${hostel.image_url}" class="hostel-img" alt="Hostel Image">
+
+       <h3>${hostel.name}</h3>
+
+       <p><strong>Rent:</strong> ₹${hostel.rent}</p>
+       <p><strong>Distance:</strong> ${hostel.distance} km</p>
+       <p><strong>City:</strong> ${hostel.city}</p>
+       <p><strong>College:</strong> ${hostel.college}</p>
+       <p><strong>Trust Score:</strong> ${hostel.trust_score}</p>
+
+        <a href="details.html?id=${hostel.id}">
+         <button class="view-btn">View Details</button>
+        </a>
       `;
 
       container.appendChild(div);
@@ -27,4 +35,3 @@ fetch(API_URL)
     document.getElementById("hostel-list").innerText =
       "Failed to load hostels.";
   });
-  
